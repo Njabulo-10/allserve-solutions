@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────
+   Brand Theme
+   Custom properties for use inside gradient utilities below.
+   Colour values are also defined in tailwind.config.js so
+   that Tailwind generates bg-*, text-*, border-* classes.
+───────────────────────────────────────────────────────── */
+
+:root {
+  --color-main-bg:   #1c0d00;
+  --color-dark-bg:   #150900;
+  --color-card-bg:   #2d1500;
+  --color-gold:      #c9a84c;
+  --color-gold-dark: #a07830;
+  --color-accent:    #4a9fff;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-main-bg);
+  color: #ffffff;
+}
+
+/* ── Complex gradient backgrounds ── */
+@layer utilities {
+
+  /* Hero section */
+  .bg-hero {
+    background:
+      radial-gradient(ellipse at 70% 40%, #3d1f0060 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, #c9a84c18 0%, transparent 50%),
+      var(--color-main-bg);
+  }
+
+  /* About section */
+  .bg-about {
+    background: linear-gradient(180deg, var(--color-dark-bg) 0%, var(--color-main-bg) 100%);
+  }
+
+  /* Card & stat-box gradient fill */
+  .bg-card {
+    background: linear-gradient(145deg, var(--color-card-bg), var(--color-main-bg));
+  }
+
+  /* Gold button / icon box gradient */
+  .bg-gold-gradient {
+    background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
+  }
+
+  /* Decorative gold dot grid overlay */
+  .dot-pattern {
+    background-image: radial-gradient(circle, var(--color-gold) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* Radial gold glow — hero corner */
+  .glow-gold {
+    background: radial-gradient(circle, var(--color-gold), transparent);
+  }
+
+  /* Soft radial glow — contact section */
+  .glow-gold-soft {
+    background: radial-gradient(ellipse, #c9a84c15, transparent);
+  }
+
+  /* Gradient divider lines */
+  .divider-to-gold         { height: 1px; background: linear-gradient(to right, transparent, var(--color-gold)); }
+  .divider-from-gold       { height: 1px; background: linear-gradient(to left,  transparent, var(--color-gold)); }
+  .divider-to-gold-faint   { height: 1px; background: linear-gradient(to right, transparent, #c9a84c40); }
+  .divider-from-gold-faint { height: 1px; background: linear-gradient(to left,  transparent, #c9a84c40); }
+
+  /* Scroll indicator vertical line */
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--color-gold), transparent);
+  }
+
+  /* Card top-right gold corner accent */
+  .card-corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(225deg, #c9a84c30, transparent);
+    border-radius: 0 4px 0 0;
+  }
+}
