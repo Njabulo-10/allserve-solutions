@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx @angular/cli@latest new allserve-app --routing=true --style=scss --ssr=false --skip-git=true --no-interactive)"
+    ]
+  }
+}
