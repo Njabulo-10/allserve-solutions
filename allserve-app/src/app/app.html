@@ -1,0 +1,217 @@
+<div class="min-h-screen bg-main-bg font-sans">
+
+  <!-- ── NAVBAR ── -->
+  <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex items-center justify-between bg-dark-bg border-b border-gold/20">
+
+    <!-- 
+      A potential logo in the future
+      Might convert this into an SVG icon with the brand name for better scalability and visual impact
+    -->
+    <div class="flex flex-col leading-tight">
+      <span class="font-display text-white text-[1.3rem] font-extrabold tracking-[0.02em]">
+        Mahlangus
+      </span>
+      <span class="text-accent text-xs font-semibold tracking-[0.08em] uppercase border-t border-gold pt-0.5">
+        Allserve Solution
+      </span>
+    </div>
+
+    <div class="hidden md:flex gap-8">
+      <a href="#services" class="text-gold text-sm font-medium no-underline tracking-[0.05em] uppercase hover:opacity-80 transition-opacity">Services</a>
+      <a href="#about"    class="text-gold text-sm font-medium no-underline tracking-[0.05em] uppercase hover:opacity-80 transition-opacity">About</a>
+      <a href="#contact"  class="text-gold text-sm font-medium no-underline tracking-[0.05em] uppercase hover:opacity-80 transition-opacity">Contact</a>
+    </div>
+
+    <a href="tel:+27790341733"
+       class="bg-gold-gradient text-main-bg font-bold text-xs tracking-[0.05em] uppercase no-underline px-5 py-2 rounded-sm hidden md:block hover:opacity-90 transition-opacity">
+      Call Us
+    </a>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="relative flex items-center justify-center overflow-hidden pt-20 min-h-screen bg-hero">
+
+    <!-- Gold dot pattern -->
+    <div class="absolute inset-0 opacity-10 dot-pattern"></div>
+
+    <!-- Gold glow top-right -->
+    <div class="absolute top-0 right-0 w-96 h-96 rounded-full opacity-20 blur-3xl glow-gold translate-x-[30%] -translate-y-[30%]"></div>
+
+    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+
+      <!-- Brand name -->
+      <div class="mb-6">
+        <h1 class="font-display text-white font-extrabold leading-[1.1] tracking-[-0.01em] text-[clamp(2.5rem,7vw,5rem)]">
+          Mahlangus
+        </h1>
+        <div class="flex items-center justify-center gap-3 mt-1">
+          <div class="divider-to-gold w-16"></div>
+          <span class="text-accent font-bold tracking-[0.12em] uppercase text-[clamp(1rem,3vw,1.4rem)]">Allserve Solution</span>
+          <div class="divider-from-gold w-16"></div>
+        </div>
+      </div>
+
+      <!-- Tagline -->
+      <div class="mb-8">
+        <p class="text-gold font-extrabold tracking-[0.06em] uppercase leading-tight text-[clamp(1.5rem,4vw,2.5rem)]">
+          We Do It All.
+        </p>
+        <p class="text-white font-semibold tracking-[0.04em] uppercase opacity-90 text-[clamp(1rem,2.5vw,1.5rem)]">
+          Call Us For Everything.
+        </p>
+      </div>
+
+      <!-- Description -->
+      <p class="text-cream leading-relaxed max-w-2xl mx-auto mb-10 text-[clamp(0.9rem,1.8vw,1.1rem)]">
+        Exceptional workmanship, custom finishes, and a commitment to quality —
+        we transform your spaces into <strong class="text-gold">luxury havens</strong> tailored to your taste.
+        From custom woodwork to elegant interiors, we bring your vision to life.
+      </p>
+
+      <!-- CTA buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#services"
+           class="bg-gold-gradient text-main-bg font-bold text-sm tracking-[0.08em] uppercase no-underline py-3.5 px-9 rounded-[2px] hover:opacity-90 transition-opacity">
+          View Our Services
+        </a>
+        <a href="#contact"
+           class="border border-gold text-gold font-semibold text-sm tracking-[0.08em] uppercase no-underline py-3.5 px-9 rounded-[2px] hover:opacity-80 transition-opacity">
+          Get a Free Quote
+        </a>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="mt-16 flex justify-center">
+        <div class="flex flex-col items-center gap-1.5 opacity-50">
+          <span class="text-gold text-[0.7rem] tracking-[0.12em] uppercase">Scroll</span>
+          <div class="scroll-line"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SERVICES ── -->
+  <section id="services" class="bg-main-bg py-[100px] px-6">
+    <div class="max-w-6xl mx-auto">
+
+      <!-- Section header -->
+      <div class="text-center mb-16">
+        <p class="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-3">What We Do</p>
+        <h2 class="font-display text-white font-bold leading-tight mb-4 text-[clamp(2rem,5vw,3rem)]">
+          Premium Handyman &amp; Interior Services
+        </h2>
+        <div class="flex items-center justify-center gap-4">
+          <div class="divider-to-gold w-20"></div>
+          <div class="w-1.5 h-1.5 bg-gold rotate-45"></div>
+          <div class="divider-from-gold w-20"></div>
+        </div>
+      </div>
+
+      <!-- Services grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        @for (service of services; track service.title) {
+          <div class="bg-card border border-gold/20 rounded-sm py-8 px-7 relative overflow-hidden group hover:border-gold transition-all duration-300">
+            <div class="card-corner"></div>
+            <h3 class="text-gold text-sm font-bold tracking-[0.04em] uppercase mb-2.5">
+              {{ service.title }}
+            </h3>
+            <p class="text-sand text-sm leading-[1.7]">
+              {{ service.description }}
+            </p>
+          </div>
+        }
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── WHY CHOOSE US ── -->
+  <section id="about" class="bg-about py-[100px] px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Text side -->
+        <div>
+          <p class="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-3">Why Choose Us</p>
+          <h2 class="font-display text-white font-bold leading-[1.25] mb-6 text-[clamp(1.8rem,4vw,2.6rem)]">
+            Craftsmanship You Can <span class="text-gold">Trust</span>
+          </h2>
+          <p class="text-sand text-base leading-relaxed mb-8">
+            At Mahlangus Allserve Solution, we combine years of hands-on experience with a passion for
+            precision. Every project — big or small — receives the same level of dedication, quality
+            materials, and attention to detail that turns ordinary spaces into something extraordinary.
+          </p>
+
+          <div class="flex flex-col gap-5">
+            @for (point of whyUs; track point.label) {
+              <div class="flex items-start gap-4">
+                <div class="w-9 h-9 min-w-9 bg-gold-gradient rounded-[2px] flex items-center justify-center text-main-bg font-bold">
+                  ✦
+                </div>
+                <div>
+                  <p class="text-white font-semibold text-[0.95rem] mb-1">{{ point.label }}</p>
+                  <p class="text-wood text-sm leading-[1.6]">{{ point.detail }}</p>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+
+        <!-- Stats side -->
+        <div class="grid grid-cols-2 gap-6">
+          @for (stat of stats; track stat.label) {
+            <div class="bg-card border border-gold/20 rounded-sm py-9 px-6 text-center">
+              <p class="font-display text-gold text-[2.8rem] font-extrabold leading-none">{{ stat.value }}</p>
+              <p class="text-sand text-xs font-medium tracking-[0.08em] uppercase mt-2">{{ stat.label }}</p>
+            </div>
+          }
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT / CTA ── -->
+  <section id="contact" class="bg-dark-bg py-[100px] px-6 relative overflow-hidden">
+
+    <!-- Centre glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] glow-gold-soft pointer-events-none"></div>
+
+    <div class="max-w-3xl mx-auto text-center relative z-10">
+
+      <p class="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-3">Ready to Transform Your Space?</p>
+      <h2 class="font-display text-white font-bold leading-tight mb-5 text-[clamp(1.8rem,5vw,3rem)]">
+        Let's Build Something <span class="text-gold">Beautiful</span> Together
+      </h2>
+      <p class="text-sand text-base leading-relaxed mb-12">
+        Contact us today for a free consultation and quote. We serve clients across the region
+        with premium craftsmanship and unmatched service.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+        <a href="tel:+27790341733"
+           class="bg-gold-gradient text-main-bg font-bold text-sm tracking-[0.08em] uppercase no-underline py-4 px-10 rounded-[2px] min-w-[200px] text-center hover:opacity-90 transition-opacity">
+          📞 Call Us Now
+        </a>
+        <a href="https://wa.me/27790341733"
+           class="border border-gold text-gold font-semibold text-sm tracking-[0.08em] uppercase no-underline py-4 px-10 rounded-[2px] min-w-[200px] text-center hover:opacity-80 transition-opacity">
+          💬 WhatsApp Us
+        </a>
+      </div>
+
+      <!-- Gold divider -->
+      <div class="flex items-center justify-center gap-4 mb-8">
+        <div class="divider-to-gold-faint flex-1"></div>
+        <div class="w-1.5 h-1.5 bg-gold rotate-45"></div>
+        <div class="divider-from-gold-faint flex-1"></div>
+      </div>
+
+      <p class="text-dark-wood text-xs tracking-[0.04em]">
+        &copy; 2026 Mahlangus Allserve Solution. All rights reserved.
+      </p>
+
+    </div>
+  </section>
+
+</div>
