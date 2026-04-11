@@ -65,8 +65,8 @@ export class App {
   ];
 
   stats = [
-    { value: '500+', label: 'Projects Completed' },
-    { value: '10+', label: 'Years Experience' },
+    { value: '50+', label: 'Projects Completed' },
+    { value: '2', label: 'Years Experience' },
     { value: '100%', label: 'Client Satisfaction' },
     { value: '9', label: 'Core Services' },
   ];
