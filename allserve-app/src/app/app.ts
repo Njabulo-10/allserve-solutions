@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { inject } from "@vercel/analytics"
+inject()
+
 @Component({
   selector: 'app-root',
   imports: [],
@@ -6,6 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './app.css'
 })
 export class App {
+
   services = [
     {
       title: 'Custom Woodwork & Carpentry',
